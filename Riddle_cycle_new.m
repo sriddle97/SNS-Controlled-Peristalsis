@@ -1,8 +1,11 @@
 function P = Riddle_cycle_new(x0,Isens0,T)
+%% Simulation turned into a function for stability analysis %%
+%  Shane Riddle, Zhuojun Yu                                  %
+%  Last edited 04/05/2022                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Input x0: initial condition; Isens0: initial censor currents; T: period
 % Output P: final point
-
 
 %% Neuron and Synapse Properties
 % Units are nF, uS, mV, ms, nA

@@ -1,5 +1,7 @@
-% Stability analysis
-
+%% Stability analysis of the SNS controlled worm peristalsis limit cycle %%
+%  Zhuojun Yu, Shane Riddle                                               %
+%  Last edited 04/05/2022                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear; clc;
 
 % unperturbed initial condition
