@@ -1,7 +1,8 @@
-%% Stability analysis of the SNS controlled worm peristalsis limit cycle %%
-%  Zhuojun Yu, Shane Riddle                                               %
-%  Last edited 04/05/2022                                                 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  Stability analysis  %%%%%%
+%   Zhuojun Yu, Shane Riddle     %
+%   Last edited 04/07/2022       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 clear; clc;
 
 % unperturbed initial condition
@@ -24,9 +25,17 @@ V = zeros(42,42);
 for i = 1:36
     pert = zeros(1,42);
     pert(i) = epsilon;
-    INITIAL_P = INITIAL_U-pert;
+    INITIAL_P = INITIAL_U+pert;
     FINAL_P = Riddle_cycle_new(INITIAL_P,Isens0,T);
-    V(:,i) = -(FINAL_P'-INITIAL_U')/epsilon;
+    V(:,i) = (FINAL_P'-INITIAL_U')/epsilon;
+end
+
+for i = 39:39
+    pert = zeros(1,42);
+    pert(i) = epsilon;
+    INITIAL_P = INITIAL_U+pert;
+    FINAL_P = Riddle_cycle_new(INITIAL_P,Isens0,T);
+    V(:,i) = (FINAL_P'-INITIAL_U')/epsilon;
 end
 
 % Floquet multipliers
