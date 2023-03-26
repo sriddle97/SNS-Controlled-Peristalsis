@@ -1,5 +1,5 @@
 # SNS_Controlled_Peristalsis
-This repository contains code that runs the SNS coupled oscillator simulation for control of the peristaltic locomotion of a worm robot as well as the stability analysis of the system's limit cycle. The 2D purely kinematic model can be found in 
+This repository contains code that runs the SNS coupled oscillator simulation for control of the peristaltic locomotion of a worm robot as well as the stability analysis of the system's limit cycle. The 2D purely kinematic model can be found in the "Controller Design and 2D Simulation" folder. The 3D model which incorporates soft bodied physics and dynamics is located in the "3D Soft Physics Model" folder. This model much more accurately simulates the behavior of a physical worm robot.
 
 ## 2D Simulation
 ### Running the model
