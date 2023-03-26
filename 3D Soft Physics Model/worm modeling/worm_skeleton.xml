@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="worm">
+   <extension>
+      <required plugin="mujoco.elasticity.cable"/>
+   </extension>
+   <size memory="1G"/>
+   <statistic center="0 0 .2" extent="1"/>
+   <compiler autolimits="true">
+    <lengthrange tolrange="0.5" />
+   </compiler>
+   <visual>
+      <global elevation="-30"/>
+   </visual>
+   <default>
+      <geom solimp=".95 .99 .0001" solref="0.01 1"/>
+      <site size="0.002"/>
+      <tendon limited="false" rgba=".95 .3 .3 1" width="0.001"/>
+      <default class="muscle">
+         <muscle ctrllimited="true" ctrlrange="0 1"/>
+      </default>
+   </default>
+   <option timestep="0.001" solver="PGS" iterations="500" tolerance="1e-6" integrator="RK4"/>
+   <worldbody>
+      <camera name="fixed" pos="0.2 -1 0.2" xyaxes="1 0 0 0 0 1"/>
+      <light castshadow="false" diffuse=".4 .4 .4" dir="0 0 -1" pos="0 0 2.0"
+             specular="0.1 0.1 0.1"/>
+      <light diffuse=".8 .8 .8" dir="0 0 -1" directional="true" pos="0 0 4"
+             specular="0.2 0.2 0.2"/>
+      <geom condim="3" material="MatPlane" name="floor" pos="0 0 -0.009" rgba="1 1 1 1"
+            size="10 10 0.125"
+            type="plane"/>
+      <body>
+         <freejoint/>
+         <composite initial="none" offset="0 0 0" prefix="A" type="cable"
+                    vertex="0 0.1 0.2 0.010908 0.12588 0.19659 0.021817 0.15 0.1866 0.032725 0.17071 0.17071 0.047269 0.19063 0.14226 0.061814 0.19962 0.10872 0.076358 0.19659 0.074118 0.090903 0.18191 0.042642 0.10545 0.15736 0.018085 0.11999 0.12588 0.003407 0.13454 0.091284 0.000381 0.14908 0.057738 0.009369 0.16362 0.029289 0.029289 0.17817 0.009369 0.057738 0.19271 0.000381 0.091284 0.20726 0.003407 0.12588 0.2218 0.018085 0.15736 0.23635 0.042642 0.18191 0.25089 0.074118 0.19659 0.26543 0.10872 0.19962 0.27998 0.14226 0.19063 0.29452 0.17071 0.17071 0.30907 0.19063 0.14226 0.32361 0.19962 0.10872 0.33816 0.19659 0.074118 0.3527 0.18191 0.042642 0.36725 0.15736 0.018085 0.38179 0.12588 0.003407 0.39453 0.095614 9.6e-05 0.40726 0.065753 0.006047 0.42 0.039067 0.020708">
+            <plugin plugin="mujoco.elasticity.cable">
+               <config key="twist" value="5e8"/>
+               <config key="bend" value="5e8"/>
+               <config key="vmax" value="2"/>
+            </plugin>
+            <joint armature="0.01" damping="0.12" kind="main"/>
+            <geom rgba=".8 .2 .1 1" size="0.002" type="capsule" density="940"/>
+         </composite>
+      </body>
+      <body name="ball00" pos="0.0327250000000000	0.170711000000000	0.170711000000000">
+        <freejoint/>
+        <geom type="sphere" size="0.005"  margin="-1.0"/>
+        <site name="site00" pos="0 0 0" size="0.005" />
+      </body>
+     
+   </worldbody>
+   <equality>
+
+    </equality>
+    <contact>
+
+    </contact>
+   <asset>
+      <texture builtin="gradient" height="512" rgb1="0.3 0.5 0.7" rgb2="0 0 0" type="skybox"
+               width="512"/>
+      <texture builtin="checker" height="512" mark="cross" markrgb=".8 .8 .8" name="texplane"
+               rgb1=".3 .3 .3"
+               rgb2="0.2 0.2 0.2"
+               type="2d"
+               width="512"/>
+      <material name="MatPlane" reflectance="0" texrepeat="10 10" texture="texplane"
+                texuniform="true"/>
+   </asset>
+
+   
+    <tendon>
+    
+    </tendon>
+
+   <actuator>
+    
+  </actuator>
+
+
+
+</mujoco>
