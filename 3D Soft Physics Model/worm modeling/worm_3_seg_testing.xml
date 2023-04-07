@@ -14,7 +14,7 @@
    <default>
       <geom solimp=".95 .99 .0001" solref="0.01 1"/>
       <site size="0.002"/>
-      <tendon limited="false" rgba=".95 .3 .3 1" width="0.001"/>
+      <tendon limited="false" rgba=".95 .3 .3 1" width="0.0025"/>
       <default class="muscle">
          <muscle ctrllimited="true" ctrlrange="0 1"/>
       </default>
@@ -1275,7 +1275,7 @@
                width="512"/>
       <texture builtin="checker" height="512" mark="cross" markrgb=".8 .8 .8" name="texplane"
                rgb1=".3 .3 .3"
-               rgb2="0.2 0.2 0.2"
+               rgb2=".2 .2 .2"
                type="2d"
                width="512"/>
       <material name="MatPlane" reflectance="0" texrepeat="10 10" texture="texplane"
@@ -1315,77 +1315,77 @@
 
 
 
-        <spatial name="spring00" stiffness="15" >
+        <spatial name="spring00" stiffness="19.9" >
            <site site="site04" />
            <site site="site12" />
         </spatial>
-        <spatial name="spring10" stiffness="15" >
+        <spatial name="spring10" stiffness="19.9" >
            <site site="site14" />
            <site site="site22" />
         </spatial>
-        <spatial name="spring20" stiffness="15" >
+        <spatial name="spring20" stiffness="19.9" >
            <site site="site24" />
            <site site="site32" />
         </spatial>
-        <spatial name="spring30" stiffness="15" >
+        <spatial name="spring30" stiffness="19.9" >
            <site site="site34" />
            <site site="site42" />
         </spatial>
-        <spatial name="spring40" stiffness="15" >
+        <spatial name="spring40" stiffness="19.9" >
            <site site="site44" />
            <site site="site52" />
         </spatial>
-        <spatial name="spring50" stiffness="15" >
+        <spatial name="spring50" stiffness="19.9" >
            <site site="site54" />
            <site site="site02" />
         </spatial>
 
-        <spatial name="spring01" stiffness="15" >
+        <spatial name="spring01" stiffness="19.9" >
            <site site="site08" />
            <site site="site16" />
         </spatial>
-        <spatial name="spring11" stiffness="15" >
+        <spatial name="spring11" stiffness="19.9" >
            <site site="site18" />
            <site site="site26" />
         </spatial>
-        <spatial name="spring21" stiffness="15" >
+        <spatial name="spring21" stiffness="19.9" >
            <site site="site28" />
            <site site="site36" />
         </spatial>
-        <spatial name="spring31" stiffness="15" >
+        <spatial name="spring31" stiffness="19.9" >
            <site site="site38" />
            <site site="site46" />
         </spatial>
-        <spatial name="spring41" stiffness="15" >
+        <spatial name="spring41" stiffness="19.9" >
            <site site="site48" />
            <site site="site56" />
         </spatial>
-        <spatial name="spring51" stiffness="15" >
+        <spatial name="spring51" stiffness="19.9" >
            <site site="site58" />
            <site site="site06" />
         </spatial>
 
-        <spatial name="spring02" stiffness="15" >
+        <spatial name="spring02" stiffness="19.9" >
            <site site="site012" />
            <site site="site110" />
         </spatial>
-        <spatial name="spring12" stiffness="15" >
+        <spatial name="spring12" stiffness="19.9" >
            <site site="site112" />
            <site site="site210" />
         </spatial>
-        <spatial name="spring22" stiffness="15" >
+        <spatial name="spring22" stiffness="19.9" >
            <site site="site212" />
            <site site="site310" />
         </spatial>
-        <spatial name="spring32" stiffness="15" >
+        <spatial name="spring32" stiffness="19.9" >
            <site site="site312" />
            <site site="site410" />
         </spatial>
-        <spatial name="spring42" stiffness="15" >
+        <spatial name="spring42" stiffness="19.9" >
            <site site="site412" />
            <site site="site510" />
         </spatial>
-        <spatial name="spring52" stiffness="15" >
+        <spatial name="spring52" stiffness="19.9" >
            <site site="site512" />
            <site site="site010" />
         </spatial>
@@ -1396,52 +1396,52 @@
 
 
 
-        <spatial name="spring03" stiffness="15" >
+        <spatial name="spring03" stiffness="19.9" >
            <site site="site06" />
            <site site="site14" />
         </spatial>
-        <spatial name="spring13" stiffness="15" >
+        <spatial name="spring13" stiffness="19.9" >
            <site site="site16" />
            <site site="site24" />
         </spatial>
-        <spatial name="spring23" stiffness="15" >
+        <spatial name="spring23" stiffness="19.9" >
            <site site="site26" />
            <site site="site34" />
         </spatial>
-        <spatial name="spring33" stiffness="15" >
+        <spatial name="spring33" stiffness="19.9" >
            <site site="site36" />
            <site site="site44" />
         </spatial>
-        <spatial name="spring43" stiffness="15" >
+        <spatial name="spring43" stiffness="19.9" >
            <site site="site46" />
            <site site="site54" />
         </spatial>
-        <spatial name="spring53" stiffness="15" >
+        <spatial name="spring53" stiffness="19.9" >
            <site site="site56" />
            <site site="site04" />
         </spatial>
 
-        <spatial name="spring04" stiffness="15" >
+        <spatial name="spring04" stiffness="19.9" >
            <site site="site010" />
            <site site="site18" />
         </spatial>
-        <spatial name="spring14" stiffness="15" >
+        <spatial name="spring14" stiffness="19.9" >
            <site site="site110" />
            <site site="site28" />
         </spatial>
-        <spatial name="spring24" stiffness="15" >
+        <spatial name="spring24" stiffness="19.9" >
            <site site="site210" />
            <site site="site38" />
         </spatial>
-        <spatial name="spring34" stiffness="15" >
+        <spatial name="spring34" stiffness="19.9" >
            <site site="site310" />
            <site site="site48" />
         </spatial>
-        <spatial name="spring44" stiffness="15" >
+        <spatial name="spring44" stiffness="19.9" >
            <site site="site410" />
            <site site="site58" />
         </spatial>
-        <spatial name="spring54" stiffness="15" >
+        <spatial name="spring54" stiffness="19.9" >
            <site site="site510" />
            <site site="site08" />
         </spatial>
@@ -1449,52 +1449,52 @@
 
 
 
-       <spatial name="spring05" stiffness="15" >
+       <spatial name="spring05" stiffness="19.9" >
            <site site="site02" />
            <site site="site10" />
         </spatial>
-        <spatial name="spring15" stiffness="15" >
+        <spatial name="spring15" stiffness="19.9" >
            <site site="site12" />
            <site site="site20" />
         </spatial>
-        <spatial name="spring25" stiffness="15" >
+        <spatial name="spring25" stiffness="19.9" >
            <site site="site22" />
            <site site="site30" />
         </spatial>
-        <spatial name="spring35" stiffness="15" >
+        <spatial name="spring35" stiffness="19.9" >
            <site site="site32" />
            <site site="site40" />
         </spatial>
-        <spatial name="spring45" stiffness="15" >
+        <spatial name="spring45" stiffness="19.9" >
            <site site="site42" />
            <site site="site50" />
         </spatial>
-        <spatial name="spring55" stiffness="15" >
+        <spatial name="spring55" stiffness="19.9" >
            <site site="site52" />
            <site site="site00" />
         </spatial>
 
-        <spatial name="spring06" stiffness="15" >
+        <spatial name="spring06" stiffness="19.9" >
            <site site="site014" />
            <site site="site112" />
         </spatial>
-        <spatial name="spring16" stiffness="15" >
+        <spatial name="spring16" stiffness="19.9" >
            <site site="site114" />
            <site site="site212" />
         </spatial>
-        <spatial name="spring26" stiffness="15" >
+        <spatial name="spring26" stiffness="19.9" >
            <site site="site214" />
            <site site="site312" />
         </spatial>
-        <spatial name="spring36" stiffness="15" >
+        <spatial name="spring36" stiffness="19.9" >
            <site site="site314" />
            <site site="site412" />
         </spatial>
-        <spatial name="spring46" stiffness="15" >
+        <spatial name="spring46" stiffness="19.9" >
            <site site="site414" />
            <site site="site512" />
         </spatial>
-        <spatial name="spring56" stiffness="15" >
+        <spatial name="spring56" stiffness="19.9" >
            <site site="site514" />
            <site site="site012" />
         </spatial>
@@ -1503,8 +1503,8 @@
 
 </tendon>
    <actuator>
-       <muscle name="ring0_muscle" tendon="ring0" class="muscle" scale="150000" lmin="0.65"/>
-       <muscle name="ring1_muscle" tendon="ring1" class="muscle" scale="150000" lmin="0.65"/>
-       <muscle name="ring2_muscle" tendon="ring2" class="muscle" scale="150000" lmin="0.65"/>
+       <muscle name="ring0_muscle" tendon="ring0" class="muscle" scale="350000" lmin="0.65"/>
+       <muscle name="ring1_muscle" tendon="ring1" class="muscle" scale="350000" lmin="0.65"/>
+       <muscle name="ring2_muscle" tendon="ring2" class="muscle" scale="350000" lmin="0.65"/>
 </actuator>
 </mujoco>

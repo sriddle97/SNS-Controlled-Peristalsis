@@ -1,25 +1,22 @@
 clc;
 clear;
 
+% Originally written by Clayton Jackson
+
 % first we run this to make the points for the composites and sites
 % make_helix_vec(num_helix, num_segs_bt_intersections, worm_length, worm_radius,freq)
-% the freq as in sin(freq*x)  
-% just how tight the spiral is
+% the freq as in sin(freq*x)  (just how tight the spiral is)
 
+%originally had make_helix_vecs(12, 3, 0.42, 0.1,14) and in worm_skeleton had bend=15e8 
+% now have: bend=5e8 to match polyethylene
+%           tendon stiffnesses set to 19.9
+%           muscle scale set to 350000
+%           6 tendon springs per segment
 
-
-%originally had make_helix_vecs(12, 3,0.42, 0.1,14) and in worm_skeleton had bend=15e8 
-% now have bend=5e8 to match polyethylene i think
-% tendon stiffnesses set to 100
-% muscle scale set to 20000
-% 6 tendon springs per segment
-
-
-helix_vecs = make_helix_vecs(12, 3,0.56, 0.16,14);       % started with (12, 3,0.42, 0.1,14) 0.48, 0.12 used for yifan dimensions
+helix_vecs = make_helix_vecs(12, 3, 0.56, 0.16,14);     %radius of 0.16m for Yifan robot
 % this is in a bit of a weird format so lets fix that
 %       LH - left handed (counterclockwise)
 %       RH - right handed (clockwise)
-%       This seemed better then having CW and CCW everywhere. A little more distinctive when youre looking at it
 dummy = helix_vecs("left_handed");
 LH_helixes = dummy{1,1};
 dummy = helix_vecs("right_handed");
@@ -48,7 +45,7 @@ make_connects(helix_vecs)
 
 % for adding tendons: the sites that you attach the tendon to will all have
 % the same second index and the first index will go up to num_segments/2. For example: 
-% the original worm with the triangular muscle, the tendon section of the
+% for a worm with triangular muscle ring, the tendon section of the
 % xml looked like this: 
 % <tendon>
 %   <spatial name="ring0" >
@@ -99,16 +96,15 @@ disp(strand_length)
 disp(strand_length*12)      %full length of tubing in robot (12 strands)
 
 % rhombus side length for doing height or diameter plots (currently assumes
-% only 3 discretizations per rhmobus side length (hence 4-7)) ???????????????????????????????????
+% 3 discretizations per rhmobus side length (hence 5-7))
+% l0 for Yifan robot is 3.5-3.6in (0.089-0.092m)
 l0 = 0;
-for i = 4:7
+for i = 5:7
     point_diffs = LH_helixes{1,1}(i,:)-LH_helixes{1,1}(i-1,:);
     part_length = sqrt(sum(point_diffs.^2));
     l0 = l0+part_length;
 end
 disp(l0)
-
-
 
 figure(1)
 clf('reset') 

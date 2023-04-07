@@ -76,7 +76,7 @@ Kh = 0.5
 Eh = 0
 Km = 1
 Em = R
-delEna = Ena - Er       # 50 mV ?????????????????????????????????????????????????
+delEna = Ena - Er       # 50 mV ??
 
 # Solve for the conductance of the NaP channel to get U* = R, with no external current or synaptic inputs.
 Gna = Gm*R/(zInf(R, Km, S, Em)*zInf(R, Kh, -S, Eh)*(delEna - R))
@@ -234,7 +234,6 @@ for i in range(Nseg):
 
 
 
-
 ##################### SNS Network and Mujoco Simulation ######################
 
 model = net.compile(backend='numpy', dt=dtSim)      # compiles the network
@@ -304,7 +303,7 @@ for i in range(numSteps):
             #                [l[i+1,j]/2, h[i+1,j]],
             #                [0, h[i+1,j]/2])
 
-            # If statement approximation for stretch sensor current (changed sensor threshold!!!!!!!!!!!!!!!!)
+            # If statement approximation for stretch sensor current (may need to change)
             if l[i+1,j] <= lmin+0.01:
                 Isens[i+1,j] = R
             else:
@@ -313,56 +312,6 @@ for i in range(numSteps):
             #inputs for next time step (Ipert and Iapp don't change in this network so only Isens needs redefined)
             inputs_mat[i+1,j,2] = Isens[i+1,j]
             inputs[(3*j):3*(j+1)] = inputs_mat[i+1,j,:]
-
-
-    # run mujoco model using outputs U1 and U2 from data
-    # get "stretch sensor" feedback from mujoco
-    # use this to change inputs_mat[i+1,:,2] (aka Isens) before running the next timestep 
-
-        
-
-        
-    
-#     # Uncomment this section and the lines after the for loop to
-#     # make and play the simulation video
-#     for j in range(Nseg):
-#         le = np.array([np.sum(l[i,j+1:Nseg]), hmax/2])
-#         bot = np.array([np.sum(l[i,j+1:Nseg])+l[i,j]/2, hmax/2-h[i,j]/2])
-#         ri = np.array([np.sum(l[i,j:Nseg]), hmax/2])
-#         top = np.array([np.sum(l[i,j+1:Nseg])+l[i,j]/2, hmax/2+h[i,j]/2])
-       
-#         vert[:,:,j, i] = np.array([le,
-#                                    bot,
-#                                    ri,
-#                                    top,
-#                                    le])
-
-# # Video capture stuff
-# fig = plt.figure() 
-# axis = plt.axes(xlim =(0, lmax*Nseg),
-#                 ylim =(0, 12))
-
-# lines = []
-# for i in range(Nseg):
-#     line, = axis.plot([], [], lw = 3)
-#     lines.append(line)
-
-# def init():
-#    for i in range(Nseg):
-#        lines[i].set_data([], []) 
-#    return lines
-
-# def animate(i):
-#    for j in range(Nseg):
-#        lines[j].set_data(vert[0,:,j,i], vert[1,:,j,i])
-#    return lines
-
-# anim = animation.FuncAnimation(fig, animate, init_func = init, 
-#                               frames = numSteps, interval = 20, blit = True)
-
-# anim.save('Single_Wave.mp4', writer = 'ffmpeg', fps = 30)
-
-
 
 
 
