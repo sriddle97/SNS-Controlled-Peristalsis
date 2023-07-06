@@ -18,8 +18,13 @@ Mujoco reads models into the simulation environment from an xml file. The xml fi
 The python script 3D_SNS_Worm_jupyter_working.ipynb runs the simulation using the model found in worm_3_seg_working.xml. Please note you may need to change the file path mujoco uses to read the xml file in the code.
 
 ### Necessary Packages
-To run this model you will need to have the both mujoco and the sns_toolbox package installed. The links below will take you to the necessary pages:
+To run this model you will need to have both mujoco and the sns_toolbox package installed. The links below will take you to the necessary pages:
 
 https://github.com/wnourse05/SNS-Toolbox.git
 
 https://github.com/deepmind/mujoco/releases
+
+## Code Citations
+[1]  Wouter Falkena (2023). xml2struct (https://www.mathworks.com/matlabcentral/fileexchange/28518-xml2struct), MATLAB Central File Exchange. Retrieved May 22, 2023.
+
+[2]  Wouter Falkena (2023). struct2xml (https://www.mathworks.com/matlabcentral/fileexchange/28639-struct2xml), MATLAB Central File Exchange. Retrieved May 22, 2023.
